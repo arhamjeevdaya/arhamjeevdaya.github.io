@@ -1,57 +1,102 @@
 <!doctype html>
-<html>
+<html lang="hi">
   <head>
     <meta charset="utf-8" />
-    <title>Arham Jeev Daya Bharat - Donate</title>
+    <title>अर्हम जीव दया भारत - सहयोग</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
       body {
-        font-family: sans-serif;
+        font-family: system-ui, sans-serif;
         text-align: center;
-        padding: 40px 20px;
-        background: #f9f9f9;
+        padding: 24px 16px;
+        background: #f4f6f8;
+        margin: 0;
       }
       .card {
-        background: white;
-        max-width: 400px;
+        background: #ffffff;
+        max-width: 420px;
         margin: auto;
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 28px 20px;
+        border-radius: 16px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      }
+      h2 {
+        color: #d9534f;
+        margin-bottom: 8px;
+      }
+      .tagline {
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 24px;
+        line-height: 1.5;
       }
       .btn {
         display: block;
-        background: #25d366;
-        color: white;
+        color: #ffffff;
         text-decoration: none;
-        padding: 15px;
-        margin: 15px 0;
-        border-radius: 8px;
-        font-size: 18px;
+        padding: 16px;
+        margin: 14px 0;
+        border-radius: 10px;
+        font-size: 17px;
         font-weight: bold;
       }
-      .btn-alt {
-        background: #007bff;
+      .btn-fixed {
+        background: #2e7d32;
+      }
+      .btn-open {
+        background: #1565c0;
+      }
+      .btn-wa {
+        background: #25d366;
+        font-size: 15px;
+        padding: 12px;
+        margin-top: 20px;
+      }
+      .info {
+        font-size: 13px;
+        color: #555;
+        margin-top: 18px;
+        line-height: 1.6;
+        border-top: 1px solid #eee;
+        padding-top: 14px;
       }
     </style>
   </head>
   <body>
     <div class="card">
-      <h2>🙏 अर्हम जीव दया भारत</h2>
-      <p>एक दीपक ज्ञान का, उज्ज्वल भविष्य हर बच्चे का</p>
-      <a
-        class="btn"
-        href="upi://pay?pa=arhamjeevdaya@yesbankltd&pn=Arham%20Jeev%20Daya%20Bharat&am=500&cu=INR"
-        >₹500 सहयोग करें (Fixed)</a
-      >
-      <a
-        class="btn btn-alt"
-        href="upi://pay?pa=arhamjeevdaya@yesbankltd&pn=Arham%20Jeev%20Daya%20Bharat&cu=INR"
-        >अपनी इच्छा अनुसार सहयोग करें</a
-      >
-      <p style="font-size: 13px; color: #555; margin-top: 20px">
-        UPI ID: <b>arhamjeevdaya@yesbankltd</b>
+      <h2>🙏 अर्हम जीव दया भारत 🙏</h2>
+      <p class="tagline">
+        एक दीपक ज्ञान का, उज्ज्वल भविष्य हर बच्चे का<br /><b
+          >मात्र ₹500/- प्रतिमाह</b
+        >
+        में एक बच्चे को शिक्षा का सहयोग दें।
       </p>
+
+      <a
+        class="btn btn-fixed"
+        href="upi://pay?pa=arhamjeevdaya@yesbankltd&pn=Arham%20Jeev%20Daya%20Bharat&am=500&cu=INR"
+      >
+        ₹500/- सहयोग करें (Fixed)
+      </a>
+
+      <a
+        class="btn btn-open"
+        href="upi://pay?pa=arhamjeevdaya@yesbankltd&pn=Arham%20Jeev%20Daya%20Bharat&cu=INR"
+      >
+        अपनी इच्छा अनुसार सहयोग करें (Any Amount)
+      </a>
+
+      <div class="info">
+        <b>UPI ID:</b> arhamjeevdaya@yesbankltd<br />
+        ✅ <b>80G में कर छूट उपलब्ध</b>
+      </div>
+
+      <a
+        class="btn btn-wa"
+        href="https://wa.me्ते,%20मैंने%20शिक्षा%20सहयोग%20हेतु%20दान%20किया%20है।%20कृपया%2080G%20रसीद%20भेजें।"
+      >
+        📲 80G रसीद के लिए WhatsApp करें
+      </a>
     </div>
   </body>
 </html>
