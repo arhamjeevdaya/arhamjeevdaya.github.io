@@ -60,26 +60,6 @@
         display: inline-block;
         background: #fafafa;
       }
-      .qr-tabs {
-        display: flex;
-        gap: 8px;
-        margin-bottom: 10px;
-      }
-      .qr-tab {
-        flex: 1;
-        padding: 8px 10px;
-        border: 1px solid #1565c0;
-        border-radius: 6px;
-        background: #fff;
-        color: #1565c0;
-        font-size: 13px;
-        font-weight: bold;
-        cursor: pointer;
-      }
-      .qr-tab[aria-pressed="true"] {
-        background: #1565c0;
-        color: #fff;
-      }
       .qr-box img {
         width: 200px;
         height: 200px;
@@ -151,26 +131,8 @@
       </a>
 
       <div class="qr-box">
-        <div class="qr-tabs">
-          <button
-            type="button"
-            class="qr-tab"
-            aria-pressed="true"
-            onclick="showQR(this, 'qr-any.png')"
-          >
-            कोई भी राशि
-          </button>
-          <button
-            type="button"
-            class="qr-tab"
-            aria-pressed="false"
-            onclick="showQR(this, 'qr-500.png')"
-          >
-            ₹500
-          </button>
-        </div>
-        <img id="qrImg" src="qr-any.png" alt="UPI QR Code" />
-        <div class="qr-label">किसी भी UPI ऐप से स्कैन करें</div>
+        <img src="qr-500.png" alt="₹500 UPI QR Code" />
+        <div class="qr-label">₹500 के सहयोग हेतु किसी भी UPI ऐप से स्कैन करें</div>
       </div>
 
       <div class="upi-box">
@@ -189,13 +151,6 @@
     </div>
 
     <script>
-      function showQR(tab, src) {
-        document.getElementById("qrImg").src = src;
-        document.querySelectorAll(".qr-tab").forEach((t) => {
-          t.setAttribute("aria-pressed", String(t === tab));
-        });
-      }
-
       function copyUPI() {
         navigator.clipboard.writeText("arhamjeevdaya@yesbankltd");
         const btn = document.querySelector(".copy-btn");
