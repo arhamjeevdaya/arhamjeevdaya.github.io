@@ -60,10 +60,31 @@
         display: inline-block;
         background: #fafafa;
       }
+      .qr-tabs {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 10px;
+      }
+      .qr-tab {
+        flex: 1;
+        padding: 8px 10px;
+        border: 1px solid #1565c0;
+        border-radius: 6px;
+        background: #fff;
+        color: #1565c0;
+        font-size: 13px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .qr-tab[aria-pressed="true"] {
+        background: #1565c0;
+        color: #fff;
+      }
       .qr-box img {
-        width: 170px;
-        height: 170px;
+        width: 200px;
+        height: 200px;
         display: block;
+        margin: 0 auto;
       }
       .qr-label {
         font-size: 12px;
@@ -130,7 +151,25 @@
       </a>
 
       <div class="qr-box">
-        <img src="https://qrserver.com" alt="UPI QR Code" />
+        <div class="qr-tabs">
+          <button
+            type="button"
+            class="qr-tab"
+            aria-pressed="true"
+            onclick="showQR(this, 'qr-any.png')"
+          >
+            कोई भी राशि
+          </button>
+          <button
+            type="button"
+            class="qr-tab"
+            aria-pressed="false"
+            onclick="showQR(this, 'qr-500.png')"
+          >
+            ₹500
+          </button>
+        </div>
+        <img id="qrImg" src="qr-any.png" alt="UPI QR Code" />
         <div class="qr-label">किसी भी UPI ऐप से स्कैन करें</div>
       </div>
 
@@ -143,13 +182,20 @@
 
       <a
         class="btn btn-wa"
-        href="https://wa.me्ते,%20मैंने%20शिक्षा%20सहयोग%20हेतु%20दान%20किया%20है।%20कृपया%2080G%20रसीद%20भेजें।"
+        href="https://wa.me/919717857614?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%2C%20%E0%A4%AE%E0%A5%88%E0%A4%82%E0%A4%A8%E0%A5%87%20%E0%A4%B6%E0%A4%BF%E0%A4%95%E0%A5%8D%E0%A4%B7%E0%A4%BE%20%E0%A4%B8%E0%A4%B9%E0%A4%AF%E0%A5%8B%E0%A4%97%20%E0%A4%B9%E0%A5%87%E0%A4%A4%E0%A5%81%20%E0%A4%A6%E0%A4%BE%E0%A4%A8%20%E0%A4%95%E0%A4%BF%E0%A4%AF%E0%A4%BE%20%E0%A4%B9%E0%A5%88%E0%A5%A4%20%E0%A4%95%E0%A5%83%E0%A4%AA%E0%A4%AF%E0%A4%BE%2080G%20%E0%A4%B0%E0%A4%B8%E0%A5%80%E0%A4%A6%20%E0%A4%AD%E0%A5%87%E0%A4%9C%E0%A5%87%E0%A4%82%E0%A5%A4"
       >
         📲 80G रसीद के लिए WhatsApp करें
       </a>
     </div>
 
     <script>
+      function showQR(tab, src) {
+        document.getElementById("qrImg").src = src;
+        document.querySelectorAll(".qr-tab").forEach((t) => {
+          t.setAttribute("aria-pressed", String(t === tab));
+        });
+      }
+
       function copyUPI() {
         navigator.clipboard.writeText("arhamjeevdaya@yesbankltd");
         const btn = document.querySelector(".copy-btn");
